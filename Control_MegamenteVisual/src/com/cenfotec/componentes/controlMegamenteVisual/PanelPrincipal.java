@@ -1,22 +1,94 @@
 
 package com.cenfotec.componentes.controlMegamenteVisual;
 
+
 /**
  *
  * @author tomat
  */
 public class PanelPrincipal extends javax.swing.JPanel {
 
+    String inpUsuario;
+    String turno;
+    String aciertosTotales;
+    String aciertosParciales;
+    String intentosRestantes;
+    
+    GestorFormulario gFormulario = new GestorFormulario(inpUsuario, turno,aciertosTotales, aciertosParciales, intentosRestantes);
+     Logica logic = new Logica();
+    
     /**
      * Creates new form PanelPrincipal
      */
     public PanelPrincipal() {
+        
         initComponents();
         
-        gestorFormulario gFormulario = new gestorFormulario(inputLetras.getText(), label_numIntentos.getText(), label_AciertosTotales.getText(),  label_AciertosParciales.getText(), label_ntentosRestantes.getText() );
         
         
+        inpUsuario = inputLetras.getText();
+        turno = label_numIntentos.getText();
+        aciertosTotales = label_AciertosTotales.getText();
+        aciertosParciales = label_AciertosParciales.getText();
+        intentosRestantes = label_ntentosRestantes.getText();
+        
+        gFormulario.setInputUsuario(inpUsuario);
+        gFormulario.setNumTurno(turno);
+        gFormulario.setAciertosTotales(aciertosTotales);
+        gFormulario.setAciertosParciales(aciertosParciales);
+        gFormulario.setIntentosRestantes(intentosRestantes);
+         
+        
+         
     }
+
+    public String getInpUsuario() {
+        return inpUsuario;
+    }
+
+    public void setInpUsuario(String inpUsuario) {
+        gFormulario.setInputUsuario(inpUsuario);
+        this.inpUsuario = inpUsuario;
+    }
+
+    public String getTurno() {
+        return turno;
+    }
+
+    public void setTurno(String turno) {
+        gFormulario.setNumTurno(turno);
+        this.turno = turno;
+    }
+
+    public String getAciertosTotales() {
+        return aciertosTotales;
+    }
+
+    public void setAciertosTotales(String aciertosTotales) {
+         gFormulario.setAciertosTotales(aciertosTotales);
+        this.aciertosTotales = aciertosTotales;
+    }
+
+    public String getAciertosParciales() {
+        return aciertosParciales;
+    }
+
+    public void setAciertosParciales(String aciertosParciales) {
+         gFormulario.setAciertosParciales(aciertosParciales);
+        this.aciertosParciales = aciertosParciales;
+    }
+
+    public String getIntentosRestantes() {
+        return intentosRestantes;
+    }
+
+    public void setIntentosRestantes(String intentosRestantes) {
+        gFormulario.setIntentosRestantes(intentosRestantes);
+        this.intentosRestantes = intentosRestantes;
+    }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -251,7 +323,9 @@ public class PanelPrincipal extends javax.swing.JPanel {
         // Compara el textow
         
         String inputUsuario =  inputLetras.getText();
-       
+        setInpUsuario(inputUsuario);
+         
+       // Esto es para prueba
         label_numIntentos.setText(inputUsuario);
         
         

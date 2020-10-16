@@ -9,16 +9,19 @@ package com.cenfotec.componentes.controlMegamenteVisual;
  *
  * @author tomat
  */
-public class gestorFormulario {
+public class GestorFormulario {
     
     
     String inputUsuario;
-    String numTurno;
+    String  numTurno;
     String aciertosParciales;
     String aciertosTotales;
     String intentosRestantes;
 
-    public gestorFormulario(String inputUsuario, String numTurno, String aciertosParciales, String aciertosTotales, String intentosRestantes) {
+    public GestorFormulario() {
+    }
+
+    public GestorFormulario(String inputUsuario, String numTurno, String aciertosParciales, String aciertosTotales, String intentosRestantes) {
         this.inputUsuario = inputUsuario;
         this.numTurno = numTurno;
         this.aciertosParciales = aciertosParciales;
@@ -66,8 +69,6 @@ public class gestorFormulario {
         this.intentosRestantes = intentosRestantes;
     }
 
-
-
-
+    
     
 }
