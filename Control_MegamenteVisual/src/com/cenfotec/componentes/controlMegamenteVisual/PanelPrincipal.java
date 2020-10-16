@@ -15,7 +15,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
     String intentosRestantes;
     
     GestorFormulario gFormulario = new GestorFormulario(inpUsuario, turno,aciertosTotales, aciertosParciales, intentosRestantes);
-     Logica logic = new Logica();
+     Logica logic = new Logica(gFormulario);
     
     /**
      * Creates new form PanelPrincipal
