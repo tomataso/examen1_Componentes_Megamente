@@ -15,7 +15,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
     String intentosRestantes;
     
     GestorFormulario gFormulario = new GestorFormulario(inpUsuario, turno,aciertosTotales, aciertosParciales, intentosRestantes);
-     Logica logic = new Logica(gFormulario);
+   
     
     /**
      * Creates new form PanelPrincipal
@@ -38,10 +38,25 @@ public class PanelPrincipal extends javax.swing.JPanel {
         gFormulario.setAciertosParciales(aciertosParciales);
         gFormulario.setIntentosRestantes(intentosRestantes);
          
-        
+        bloquearJuego();
          
     }
 
+    public void bloquearJuego(){
+        
+        btn_Comparar.setEnabled(false);
+        inputLetras.setEnabled(false);
+        
+    }
+    
+        public void desbloquearJuego(){
+        
+        btn_Comparar.setEnabled(true);
+        inputLetras.setEnabled(true);
+        
+    }
+    
+    
     public String getInpUsuario() {
         return inpUsuario;
     }
@@ -333,7 +348,12 @@ public class PanelPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_CompararMouseClicked
 
     private void btn_IniciarJuegoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_IniciarJuegoMouseClicked
-        // TODO add your handling code here:
+        // Se inicializa el juego y se desbloquean las teclas
+        
+        
+        gFormulario.iniciarJuego();
+                desbloquearJuego();
+                
     }//GEN-LAST:event_btn_IniciarJuegoMouseClicked
 
     private void inputLetrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputLetrasMouseClicked

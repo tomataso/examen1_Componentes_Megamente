@@ -33,7 +33,7 @@ public class Logica {
     
     
     
-    private void generarCodigo() {
+    public void generarCodigo() {
 
         char[] colores = new char[6];
 
@@ -80,7 +80,7 @@ public class Logica {
     
 
 
-    private void comparar(String inputUsuario) {
+    public void comparar(String inputUsuario) {
 
         char[] palabraSeparada = separarCaracteres(inputUsuario);
 

@@ -17,6 +17,8 @@ public class GestorFormulario {
     String aciertosParciales;
     String aciertosTotales;
     String intentosRestantes;
+    
+      Logica logic = new Logica();
 
     public GestorFormulario() {
     }
@@ -28,6 +30,22 @@ public class GestorFormulario {
         this.aciertosTotales = aciertosTotales;
         this.intentosRestantes = intentosRestantes;
     }
+    
+    
+    public void iniciarJuego(){
+        
+        logic.generarCodigo();
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
 
     public String getInputUsuario() {
         return inputUsuario;
