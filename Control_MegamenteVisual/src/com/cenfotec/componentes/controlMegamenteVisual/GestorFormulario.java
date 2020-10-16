@@ -40,9 +40,24 @@ public class GestorFormulario {
         
     }
     
+    public void revisarJugada(String inputUsuario){
+        
+        // Aca se lleva a la logica para que se compare y se hace minuscula para que sea digerible por la rutina.
+        
+        logic.comparar(inputUsuario.toLowerCase());
+        actualizarDatos();
+    }
     
-    
-    
+    public void actualizarDatos(){
+        
+        numTurno = Integer.toString(logic.getNumTurno());
+        intentosRestantes = Integer.toString(logic.getTurnosRestantes());
+        aciertosParciales = Integer.toString(logic.getNumAParciales());
+        aciertosTotales = Integer.toString(logic.getNumATotales());
+      
+        
+        
+    }
     
     
     

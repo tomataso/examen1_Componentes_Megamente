@@ -44,14 +44,36 @@ public class Logica {
         colores[4] = 'v';
         colores[5] = 'm';
 
+        
+        int[] noUsarNum = new int[4];
+        
         // Asigna la clave
         for (int i = 0; i < 4; i++) {
 
-            clavePartida[i] = colores[numRandomEntreRango(0, 6)];
+            
+            int indice = numRandomEntreRango(0, 6);
+
+            noUsarNum[i] = indice;
+/*
+            while (indice == noUsarNum[0] || indice == noUsarNum[1] || indice == noUsarNum[2] || indice == noUsarNum[3]) {
+
+                indice = numRandomEntreRango(0, 6);
+
+                noUsarNum[i] = indice;
+
+            }
+             */   
+                 clavePartida[i] = colores[indice];  
+                
+            
+           
+            
+           
 
         }
 
         // Imprime en Consola para prueba la clave
+        System.out.println("+ La Clave de la Partida es:");
         for (char c : clavePartida) {
             System.out.println(c);
 
@@ -69,7 +91,12 @@ public class Logica {
             palabraSeparada[i] = palabra.charAt(i);
         }
 
+        
+        
+        
         // Imprime en Consola para prueba
+        
+                                    System.out.println("El Separador Uso:");
         for (char c : palabraSeparada) {
             System.out.println(c);
 
@@ -97,8 +124,10 @@ public class Logica {
 
                                                 } else {
 
-                                                    aciertoParcial++;
+                                                  
                                                 }
+                                                
+                                                  aciertoParcial++;
 
                             } else if (palabraSeparada[i] == clavePartida[1]) {
 
@@ -108,9 +137,12 @@ public class Logica {
 
                                                 } else {
 
-                                                    aciertoParcial++;
+                                                    
                                                 }
 
+                                                
+                                                aciertoParcial++;
+                                                
                             } else if (palabraSeparada[i] == clavePartida[2]) {
 
                                                 if (i == 2) {
@@ -119,8 +151,10 @@ public class Logica {
 
                                                 } else {
 
-                                                    aciertoParcial++;
+                                                   
                                                 }
+                                                
+                                                 aciertoParcial++;
 
                             } else if (palabraSeparada[i] == clavePartida[3]) {
 
@@ -130,9 +164,11 @@ public class Logica {
 
                                                 } else {
 
-                                                    aciertoParcial++;
+                                                   
                                                 }
 
+                                                
+                                                 aciertoParcial++;
                             } else {
                                 
                                 // Imprime para prueba
@@ -168,14 +204,14 @@ public class Logica {
                
           numAParciales = AciertosParciales;
           numATotales = aciertosTotales;
-          numTurno = numTurno++;
+          numTurno = numTurno + 1;
           turnosRestantes = turnosRestantes - 1;
           
           
               // Imprime para prueba
                                     System.out.println("Numero aciertos parciales = " + numAParciales);
                                     System.out.println("Numero aciertos Totales = " +numATotales);
-                                    System.out.println("Numero de Turno = " +numTurno);
+                                    System.out.println("Numero de Turno = " + numTurno);
                                     System.out.println("Numero de Turno Restante= " + turnosRestantes);
                
            }

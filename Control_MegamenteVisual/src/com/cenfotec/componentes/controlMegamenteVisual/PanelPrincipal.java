@@ -54,6 +54,9 @@ public class PanelPrincipal extends javax.swing.JPanel {
         btn_Comparar.setEnabled(true);
         inputLetras.setEnabled(true);
         
+        
+
+        
     }
     
     
@@ -188,7 +191,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
         jLabel10.setText("Aciertos Totales:");
 
         label_ntentosRestantes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        label_ntentosRestantes.setText("0");
+        label_ntentosRestantes.setText("8");
 
         label_AciertosTotales.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         label_AciertosTotales.setText("0");
@@ -339,9 +342,16 @@ public class PanelPrincipal extends javax.swing.JPanel {
         
         String inputUsuario =  inputLetras.getText();
         setInpUsuario(inputUsuario);
+         gFormulario.revisarJugada(inputUsuario);
+         
+         label_numIntentos.setText(gFormulario.getNumTurno());
+         label_AciertosTotales.setText(gFormulario.getAciertosTotales());
+         label_AciertosParciales.setText(gFormulario.getAciertosParciales());
+         label_ntentosRestantes.setText(gFormulario.getIntentosRestantes());
+         
          
        // Esto es para prueba
-        label_numIntentos.setText(inputUsuario);
+        System.out.println(" Esto metio en el input box =  " + inputUsuario);
         
         
         
