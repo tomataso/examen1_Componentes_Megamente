@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.cenfotec.componentes.controlMegamenteVisual;
 
 /**
@@ -16,6 +12,10 @@ public class PanelPrincipal extends javax.swing.JPanel {
      */
     public PanelPrincipal() {
         initComponents();
+        
+        gestorFormulario gFormulario = new gestorFormulario(inputLetras.getText(), label_numIntentos.getText(), label_AciertosTotales.getText(),  label_AciertosParciales.getText(), label_ntentosRestantes.getText() );
+        
+        
     }
 
     /**
@@ -83,6 +83,11 @@ public class PanelPrincipal extends javax.swing.JPanel {
 
         inputLetras.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         inputLetras.setText("Inserte Letras Aquí");
+        inputLetras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inputLetrasMouseClicked(evt);
+            }
+        });
         inputLetras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputLetrasActionPerformed(evt);
@@ -243,7 +248,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_IniciarJuegoActionPerformed
 
     private void btn_CompararMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CompararMouseClicked
-        // TODO add your handling code here:
+        // Compara el textow
         
         String inputUsuario =  inputLetras.getText();
        
@@ -256,6 +261,11 @@ public class PanelPrincipal extends javax.swing.JPanel {
     private void btn_IniciarJuegoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_IniciarJuegoMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_IniciarJuegoMouseClicked
+
+    private void inputLetrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputLetrasMouseClicked
+        // Quita el texto por defecto del input
+        this.inputLetras.setText("");
+    }//GEN-LAST:event_inputLetrasMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

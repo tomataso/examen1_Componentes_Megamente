@@ -17,6 +17,8 @@ public class MegamenteApp {
     public static void main(String[] args) {
         MiForm miForm = new MiForm();
         miForm.setVisible(true);
+        
+        
 
     }
     
