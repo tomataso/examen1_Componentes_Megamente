@@ -36,7 +36,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         btn_Comparar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        inputLetras = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         label_ntentosRestantes = new javax.swing.JLabel();
@@ -81,11 +81,11 @@ public class PanelPrincipal extends javax.swing.JPanel {
             }
         });
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField1.setText("Inserte Letras Aquí");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        inputLetras.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        inputLetras.setText("Inserte Letras Aquí");
+        inputLetras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                inputLetrasActionPerformed(evt);
             }
         });
 
@@ -175,7 +175,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
                                     .addGap(164, 164, 164))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(inputLetras, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(jLabel6))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -203,7 +203,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(label_numIntentos)
                         .addGap(33, 33, 33)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(inputLetras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_Comparar)
                         .addGap(43, 43, 43))
@@ -227,16 +227,16 @@ public class PanelPrincipal extends javax.swing.JPanel {
         );
 
         btn_Comparar.getAccessibleContext().setAccessibleName("");
-        jTextField1.getAccessibleContext().setAccessibleName("txtField_InsertarLetras");
+        inputLetras.getAccessibleContext().setAccessibleName("txtField_InsertarLetras");
         label_ntentosRestantes.getAccessibleContext().setAccessibleName("");
         label_AciertosTotales.getAccessibleContext().setAccessibleName("AciertosTotalesNUM");
         btn_IniciarJuego.getAccessibleContext().setAccessibleName("");
         label_numIntentos.getAccessibleContext().setAccessibleName("");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void inputLetrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputLetrasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_inputLetrasActionPerformed
 
     private void btn_IniciarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IniciarJuegoActionPerformed
         // TODO add your handling code here:
@@ -244,6 +244,13 @@ public class PanelPrincipal extends javax.swing.JPanel {
 
     private void btn_CompararMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CompararMouseClicked
         // TODO add your handling code here:
+        
+        String inputUsuario =  inputLetras.getText();
+       
+        label_numIntentos.setText(inputUsuario);
+        
+        
+        
     }//GEN-LAST:event_btn_CompararMouseClicked
 
     private void btn_IniciarJuegoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_IniciarJuegoMouseClicked
@@ -254,6 +261,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Comparar;
     private javax.swing.JButton btn_IniciarJuego;
+    private javax.swing.JTextField inputLetras;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
@@ -266,7 +274,6 @@ public class PanelPrincipal extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel label_AciertosParciales;
     private javax.swing.JLabel label_AciertosTotales;
     private javax.swing.JLabel label_ntentosRestantes;
