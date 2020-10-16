@@ -3,3 +3,5 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 /Control_MegamenteVisual/nbproject/private/
+/Control_MegamenteVisual/build/
+/Control_MegamenteVisual/dist/
