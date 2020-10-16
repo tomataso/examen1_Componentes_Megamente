@@ -22,6 +22,7 @@ public class Logica {
     int numAParciales = 0;
     int numATotales = 0;
     
+    int estadoPartida = 3;
     
     Logica(GestorFormulario gFormulario) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -113,6 +114,16 @@ public class Logica {
 
         int aciertoTotal = 0;
         int aciertoParcial = 0;
+        
+        // Revisa si la palabra entera es la correcta.
+        String usuarioDice = Character.toString(palabraSeparada[0]) + Character.toString(palabraSeparada[1]) + Character.toString(palabraSeparada[2]) + Character.toString(palabraSeparada[3]);
+        String pcdice = Character.toString(clavePartida[0]) + Character.toString(clavePartida[1]) + Character.toString(clavePartida[2]) + Character.toString(clavePartida[3]);
+
+        if (usuarioDice.equals(pcdice)) {
+            setEstadoPartida(1);
+        }
+        
+        // Busca los aciertos totales y parciales.
 
         for (int i = 0; i < 4; i++) {
 
@@ -121,54 +132,54 @@ public class Logica {
                                                 if (i == 0) {
 
                                                     aciertoTotal++;
-
+                                                    aciertoParcial++;
                                                 } else {
 
-                                                  
+                                                  aciertoParcial++;
                                                 }
                                                 
-                                                  aciertoParcial++;
+                                                  
 
                             } else if (palabraSeparada[i] == clavePartida[1]) {
 
                                                 if (i == 1) {
 
                                                     aciertoTotal++;
-
+                                                     aciertoParcial++;
                                                 } else {
 
-                                                    
+                                                   aciertoParcial++; 
                                                 }
 
                                                 
-                                                aciertoParcial++;
+                                                
                                                 
                             } else if (palabraSeparada[i] == clavePartida[2]) {
 
                                                 if (i == 2) {
 
                                                     aciertoTotal++;
-
+                                                 aciertoParcial++;
                                                 } else {
 
-                                                   
+                                                   aciertoParcial++;
                                                 }
                                                 
-                                                 aciertoParcial++;
+                                                 
 
                             } else if (palabraSeparada[i] == clavePartida[3]) {
 
                                                 if (i == 3) {
 
                                                     aciertoTotal++;
-
+                                                     aciertoParcial++;
                                                 } else {
 
-                                                   
+                                                    aciertoParcial++;
                                                 }
 
                                                 
-                                                 aciertoParcial++;
+                                                
                             } else {
                                 
                                 // Imprime para prueba
@@ -181,11 +192,15 @@ public class Logica {
             
         }
      
-     actualizarDatosPartida(aciertoTotal, aciertoParcial);
      
+     
+
+     
+   actualizarDatosPartida(aciertoTotal, aciertoParcial);
 
 }    
         
+    
     
     
      
@@ -202,8 +217,12 @@ public class Logica {
 
       private void actualizarDatosPartida(int aciertosTotales, int AciertosParciales){
                
-          numAParciales = AciertosParciales;
-          numATotales = aciertosTotales;
+          setNumAParciales(AciertosParciales);
+          setNumATotales(aciertosTotales);
+          
+ 
+    
+          // numATotales = aciertosTotales;
           numTurno = numTurno + 1;
           turnosRestantes = turnosRestantes - 1;
           
@@ -215,6 +234,31 @@ public class Logica {
                                     System.out.println("Numero de Turno Restante= " + turnosRestantes);
                
            }
+      
+      
+      public int ganoOPerdio( ){
+          
+     // Continua Normal
+          int estado = getEstadoPartida();
+          
+          // Gano
+          if ( getNumATotales() == 4){
+              
+              setEstadoPartida(1);
+              estado = 1;
+              
+          }
+          
+          // Perdio
+           if ( getNumTurno() == 9){
+              
+              setEstadoPartida(0);
+              estado = 0;
+          }
+           
+           return estado;
+          
+      }
 
     public char[] getTextoUsuario() {
         return textoUsuario;
@@ -262,6 +306,14 @@ public class Logica {
 
     public void setNumATotales(int numATotales) {
         this.numATotales = numATotales;
+    }
+
+    public int getEstadoPartida() {
+        return estadoPartida;
+    }
+
+    public void setEstadoPartida(int estadoPartida) {
+        this.estadoPartida = estadoPartida;
     }
 
         

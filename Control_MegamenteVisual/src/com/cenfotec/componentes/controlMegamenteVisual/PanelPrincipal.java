@@ -1,6 +1,9 @@
 
 package com.cenfotec.componentes.controlMegamenteVisual;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -349,7 +352,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
          label_AciertosParciales.setText(gFormulario.getAciertosParciales());
          label_ntentosRestantes.setText(gFormulario.getIntentosRestantes());
          
-         
+         mensajeVictoriaDerrota();
        // Esto es para prueba
         System.out.println(" Esto metio en el input box =  " + inputUsuario);
         
@@ -361,11 +364,50 @@ public class PanelPrincipal extends javax.swing.JPanel {
         // Se inicializa el juego y se desbloquean las teclas
         
         
-        gFormulario.iniciarJuego();
+        resetGame();
                 desbloquearJuego();
+                
+     
                 
     }//GEN-LAST:event_btn_IniciarJuegoMouseClicked
 
+    private void mensajeVictoriaDerrota(){
+        
+        int situacion = gFormulario.getEstadoPartatida();
+        
+        
+            JFrame frameVictoria = new JFrame();  
+        
+        if ( situacion == 0){
+            
+           
+            JOptionPane.showMessageDialog(frameVictoria,"Perdio, vuelva a intentarlo.","Alert",JOptionPane.WARNING_MESSAGE);
+            bloquearJuego();
+        } 
+        
+        if ( situacion == 1) {
+            
+            JOptionPane.showMessageDialog(frameVictoria,"Felicidades Gano!","Alert",JOptionPane.WARNING_MESSAGE);
+             bloquearJuego();
+        } 
+        
+    }
+    
+    
+    public void resetGame(){
+          gFormulario.iniciarJuego();
+          
+          inputLetras.setText("");
+          label_numIntentos.setText("0");
+          
+           label_AciertosTotales.setText("0");
+            label_AciertosParciales.setText("0");
+            
+            label_ntentosRestantes.setText("8");
+          
+        
+    }
+    
     private void inputLetrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputLetrasMouseClicked
         // Quita el texto por defecto del input
         this.inputLetras.setText("");

@@ -18,6 +18,10 @@ public class GestorFormulario {
     String aciertosTotales;
     String intentosRestantes;
     
+    int estadoPartatida = 3;
+
+   
+    
       Logica logic = new Logica();
 
     public GestorFormulario() {
@@ -54,12 +58,22 @@ public class GestorFormulario {
         intentosRestantes = Integer.toString(logic.getTurnosRestantes());
         aciertosParciales = Integer.toString(logic.getNumAParciales());
         aciertosTotales = Integer.toString(logic.getNumATotales());
+        
+        setEstadoPartatida(logic.ganoOPerdio());
       
         
         
     }
     
-    
+    public void resetJuego(){
+        
+        
+        logic.setEstadoPartida(3);
+        logic.setNumTurno(0);
+        logic.setNumAParciales(0);
+        logic.setNumATotales(0);
+        logic.setTurnosRestantes(8);
+    }
     
 
     public String getInputUsuario() {
@@ -103,5 +117,11 @@ public class GestorFormulario {
     }
 
     
-    
+     public int getEstadoPartatida() {
+        return estadoPartatida;
+    }
+
+    public void setEstadoPartatida(int estadoPartatida) {
+        this.estadoPartatida = estadoPartatida;
+    }
 }
