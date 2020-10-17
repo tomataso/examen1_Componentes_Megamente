@@ -247,6 +247,11 @@ public class Logica {
               setEstadoPartida(1);
               estado = 1;
               
+                  textoUsuario[0] = '1';
+                  textoUsuario[1] = '2';
+                  textoUsuario[2] = '3';
+                  textoUsuario[3] = '4';
+              
           }
           
           // Perdio

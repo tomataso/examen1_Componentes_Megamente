@@ -383,14 +383,17 @@ public class PanelPrincipal extends javax.swing.JPanel {
            
             JOptionPane.showMessageDialog(frameVictoria,"Perdio, vuelva a intentarlo.","Alert",JOptionPane.WARNING_MESSAGE);
             bloquearJuego();
-        } 
+        } else
         
         if ( situacion == 1) {
             
             JOptionPane.showMessageDialog(frameVictoria,"Felicidades Gano!","Alert",JOptionPane.WARNING_MESSAGE);
              bloquearJuego();
-        } 
+        } else {
+             gFormulario.setEstadoPartatida(3); 
+        }
         
+        gFormulario.setEstadoPartatida(3);
     }
     
     
